@@ -1,99 +1,86 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dasar-dasar Python - PythonLearn</title>
-    <link rel="stylesheet" href="../../css/style.css">
-    <style>
-        .content-wrapper { padding: 40px 5%; max-width: 1000px; margin: auto; }
-        .topic-section { background: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .topic-section h2 { color: #3776ab; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .code-block { background: #272822; color: #f8f8f2; padding: 20px; border-radius: 8px; font-family: 'Consolas', 'Monaco', monospace; margin: 15px 0; overflow-x: auto; white-space: pre; line-height: 1.5; }
-        .note { background: #fff3cd; border-left: 5px solid #ffeeba; padding: 15px; margin: 20px 0; border-radius: 5px; font-style: italic; }
-        .back-link { display: inline-block; margin-bottom: 20px; color: #3776ab; text-decoration: none; font-weight: bold; }
-    </style>
-</head>
-<body>
-    <nav>
-        <div class="logo">PythonLearn</div>
-        <ul>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../roadmap.html">Roadmap</a></li>
-            <li><a href="../modules.html">Modul</a></li>
-        </ul>
-    </nav>
+    <script>
+        const quizData = [
+            {
+                question: "Manakah tipe data yang digunakan untuk menyimpan angka desimal di Python?",
+                options: ["int", "float", "str", "bool"],
+                correct: 1
+            },
+            {
+                question: "Simbol apa yang digunakan untuk membuat komentar satu baris di Python?",
+                options: ["//", "/*", "#", "--"],
+                correct: 2
+            },
+            {
+                question: "Koleksi data mana yang bersifat Immutable (tidak bisa diubah setelah dibuat)?",
+                options: ["List", "Dictionary", "Set", "Tuple"],
+                correct: 3
+            },
+            {
+                question: "Apa fungsi dari keyword 'lambda' di Python?",
+                options: ["Membuat loop", "Membuat fungsi anonim satu baris", "Menghapus variabel", "Menentukan tipe data"],
+                correct: 1
+            },
+            {
+                question: "Bagaimana cara menambahkan elemen ke dalam sebuah List?",
+                options: ["append()", "add()", "insert_last()", "push()"],
+                correct: 0
+            }
+        ];
 
-    <div class="content-wrapper">
-        <a href="../modules.html" class="back-link">← Kembali ke Katalog Modul</a>
-        <h1>Level 1: Fondasi Python</h1>
-        <p>Halaman ini membahas segala hal yang perlu Anda ketahui sebagai pemula untuk mulai menulis kode Python.</p>
+        let currentQuestionIndex = 0;
 
-        <div class="topic-section">
-            <h2>1. Variabel & Tipe Data</h2>
-            <p>Variabel adalah wadah untuk menyimpan data. Di Python, Anda tidak perlu menentukan tipe data secara manual.</p>
-            <div class="code-block"># Contoh Tipe Data Dasar
-nama = "Andi"          # String (teks)
-umur = 25               # Integer (angka bulat)
-tinggi = 170.5          # Float (angka desimal)
-is_active = True        # Boolean (True/False)
+        function loadQuestion() {
+            const questionEl = document.getElementById('question');
+            const optionsEl = document.getElementById('options');
+            const resultEl = document.getElementById('quiz-result');
+            const nextBtn = document.getElementById('next-btn');
 
-print(f"{nama} berumur {umur} tahun.")</div>
-            <div class="note">Tips: Gunakan nama variabel yang deskriptif (contoh: 'harga_produk' lebih baik daripada 'hp').</div>
-        </div>
+            resultEl.innerText = "";
+            nextBtn.style.display = "none";
+            optionsEl.innerHTML = "";
 
-        <div class="topic-section">
-            <h2>2. Struktur Kontrol (Alur Program)</h2>
-            <p>Gunakan <code>if</code> untuk logika keputusan dan <code>for/while</code> untuk pengulangan.</p>
-            <div class="code-block"># Kondisional
-nilai = 75
-if nilai >= 80:
-    print("Nilai A")
-elif nilai >= 70:
-    print("Nilai B")
-else:
-    print("Nilai C")
+            const currentQuestion = quizData[currentQuestionIndex];
+            questionEl.innerText = `${currentQuestionIndex + 1}. ${currentQuestion.question}`;
 
-# Loop For (Iterasi List)
-buah = ["Apel", "Mangga", "Jeruk"]
-for b in buah:
-    print(f"Buah: {b}")</div>
-        </div>
+            currentQuestion.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.innerText = option;
+                button.classList.add('option-btn');
+                button.onclick = () => checkAnswer(index);
+                optionsEl.appendChild(button);
+            });
+        }
 
-        <div class="topic-section">
-            <h2>3. Koleksi Data (List, Tuple, Set, Dict)</h2>
-            <p>Python memiliki beberapa cara untuk menyimpan sekumpulan data.</p>
-            <div class="code-block"># List: Urut & bisa diubah
-my_list = [1, 2, 3, "Python"]
+        function checkAnswer(selectedIndex) {
+            const correctIndex = quizData[currentQuestionIndex].correct;
+            const options = document.querySelectorAll('.option-btn');
+            const resultEl = document.getElementById('quiz-result');
+            const nextBtn = document.getElementById('next-btn');
 
-# Tuple: Urut & TIDAK bisa diubah
-my_tuple = (10, 20, 30)
+            options.forEach((btn, index) => {
+                btn.disabled = true;
+                if (index === correctIndex) {
+                    btn.classList.add('correct');
+                } else if (index === selectedIndex) {
+                    btn.classList.add('wrong');
+                }
+            });
 
-# Set: Unik & tidak urut
-my_set = {1, 2, 2, 3} # Hasilnya: {1, 2, 3}
+            if (selectedIndex === correctIndex) {
+                resultEl.innerText = "✅ Benar! Bagus sekali.";
+                resultEl.style.color = "green";
+            } else {
+                resultEl.innerText = "❌ Salah! Jawaban yang benar adalah: " + quizData[currentQuestionIndex].options[correctIndex];
+                resultEl.style.color = "red";
+            }
 
-# Dictionary: Key-Value pair
-my_dict = {"nama": "Andi", "umur": 25}
-print(my_dict["nama"])</div>
-        </div>
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData.length) {
+                nextBtn.style.display = "block";
+            } else {
+                resultEl.innerText += " | Kuis Selesai! 🎉";
+            }
+        }
 
-        <div class="topic-section">
-            <h2>4. Fungsi Dasar & Lambda</h2>
-            <p>Fungsi memungkinkan Anda menulis kode sekali dan menggunakannya berkali-kali.</p>
-            <div class="code-block"># Fungsi Biasa
-def hitung_luas(p, l):
-    return p * l
-
-print(f"Luas: {hitung_luas(10, 5)}")
-
-# Lambda Function (Fungsi satu baris)
-kali_dua = lambda x: x * 2
-print(f"Hasil: {kali_dua(10)}")</div>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 PythonLearn - Dibuat untuk Pembelajar Indonesia</p>
-    </footer>
-</body>
-</html>
+        window.onload = loadQuestion;
+    </script>
