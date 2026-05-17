@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#071019">
+    <meta name="description" content="How-to guide Python untuk pemula: cara membuat fungsi, membaca dan menulis file, menangani error, serta mengambil data dari API.">
+    <title>How-to Guide Python untuk Pemula | PythonLearn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
+    <nav>
+        <a class="logo" href="../../index.html">PythonLearn</a>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../roadmap.html">Roadmap</a></li>
+            <li><a class="active" href="../modules.html" aria-current="page">Modul</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content" class="content-wrapper">
+        <a href="../modules.html" class="back-link">← Kembali ke Katalog Modul</a>
+        <h1>How-to Guide Python untuk Pemula</h1>
+        <p>Gunakan halaman ini sebagai resep cepat saat Anda ingin menyelesaikan tugas tertentu di Python.</p>
+
+        <section class="topic-section">
+            <h2>Cara Membuat Fungsi yang Rapi</h2>
+            <p>Gunakan fungsi saat ada kode yang dipakai berulang atau saat satu proses mulai terasa terlalu panjang.</p>
+            <ol class="steps-list">
+                <li>Tentukan satu tujuan fungsi.</li>
+                <li>Beri nama fungsi dengan kata kerja.</li>
+                <li>Gunakan parameter untuk data yang berubah.</li>
+                <li>Gunakan <code>return</code> jika fungsi perlu menghasilkan nilai.</li>
+            </ol>
+            <pre class="code-block"><code>def hitung_total(harga, jumlah):
+    return harga * jumlah
+
+total = hitung_total(15000, 3)
+print(f"Total belanja: Rp{total}")</code></pre>
+            <div class="note">Checklist: nama fungsi jelas, tugasnya satu, dan hasilnya mudah diuji.</div>
+        </section>
+
+        <section class="topic-section">
+            <h2>Cara Membaca dan Menulis File</h2>
+            <p>File handling berguna untuk menyimpan data sederhana tanpa database.</p>
+            <pre class="code-block"><code># Menulis file baru
+with open("catatan.txt", "w", encoding="utf-8") as file:
+    file.write("Belajar Python itu bertahap.\n")
+
+# Menambahkan isi file
+with open("catatan.txt", "a", encoding="utf-8") as file:
+    file.write("Hari ini belajar file handling.\n")
+
+# Membaca file
+with open("catatan.txt", "r", encoding="utf-8") as file:
+    isi = file.read()
+    print(isi)</code></pre>
+            <h3>Mode file yang sering dipakai</h3>
+            <ul>
+                <li><code>"r"</code>: membaca file.</li>
+                <li><code>"w"</code>: menulis ulang file dari awal.</li>
+                <li><code>"a"</code>: menambahkan isi di akhir file.</li>
+            </ul>
+        </section>
+
+        <section class="topic-section">
+            <h2>Cara Menangani Error Sederhana</h2>
+            <p>Gunakan <code>try</code> dan <code>except</code> agar program memberi pesan yang jelas saat terjadi masalah.</p>
+            <pre class="code-block"><code>try:
+    angka = int(input("Masukkan angka: "))
+    print(100 / angka)
+except ValueError:
+    print("Input harus berupa angka.")
+except ZeroDivisionError:
+    print("Angka tidak boleh 0.")</code></pre>
+            <p>Jangan menangkap semua error tanpa alasan. Tangani error yang memang mungkin terjadi.</p>
+        </section>
+
+        <section class="topic-section">
+            <h2>Cara Mengambil Data dari API</h2>
+            <p>API memungkinkan program Python mengambil data dari layanan lain. Contoh ini memakai library <code>requests</code>.</p>
+            <pre class="code-block"><code># Install dulu:
+# pip install requests
+
+import requests
+
+url = "https://api.github.com/users/octocat"
+response = requests.get(url, timeout=10)
+
+if response.status_code == 200:
+    data = response.json()
+    print(data["login"])
+    print(data["public_repos"])
+else:
+    print("Gagal mengambil data API.")</code></pre>
+            <h3>Checklist API</h3>
+            <ul>
+                <li>Selalu cek status response.</li>
+                <li>Gunakan timeout agar program tidak menunggu terlalu lama.</li>
+                <li>Baca dokumentasi API untuk mengetahui struktur data JSON.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PythonLearn. Dibuat untuk belajar Python dengan lebih fokus.</p>
+    </footer>
+</body>
+</html>

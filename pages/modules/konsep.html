@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#071019">
+    <meta name="description" content="Penjelasan konsep Python untuk pemula: kenapa Python cocok dipelajari, cara kerja variabel, tipe data, mutable vs immutable, dan OOP.">
+    <title>Penjelasan Konsep Python untuk Pemula | PythonLearn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
+    <nav>
+        <a class="logo" href="../../index.html">PythonLearn</a>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../roadmap.html">Roadmap</a></li>
+            <li><a class="active" href="../modules.html" aria-current="page">Modul</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content" class="content-wrapper">
+        <a href="../modules.html" class="back-link">← Kembali ke Katalog Modul</a>
+        <h1>Penjelasan Konsep Python</h1>
+        <p>Halaman ini membantu Anda memahami alasan di balik sintaks Python. Baca bagian ini saat Anda sudah bisa menjalankan contoh kode, tetapi masih ingin tahu cara berpikirnya.</p>
+
+        <section class="topic-section">
+            <h2>Kenapa Python Cocok untuk Pemula</h2>
+            <p>Python populer karena sintaksnya ringkas dan mirip bahasa manusia. Anda bisa fokus pada logika program sebelum berurusan dengan detail teknis yang lebih rumit.</p>
+            <div class="callout-grid">
+                <article>
+                    <h3>Sintaks sederhana</h3>
+                    <p>Blok kode dibaca lewat indentasi, bukan tanda kurung kurawal.</p>
+                </article>
+                <article>
+                    <h3>Ekosistem luas</h3>
+                    <p>Python dipakai untuk automation, web, data, AI, scripting, dan testing.</p>
+                </article>
+                <article>
+                    <h3>Cepat untuk prototipe</h3>
+                    <p>Ide kecil bisa diuji dengan sedikit kode.</p>
+                </article>
+            </div>
+            <div class="note">Keterbatasannya: Python tidak selalu menjadi pilihan tercepat untuk sistem yang sangat membutuhkan performa rendah-level.</div>
+        </section>
+
+        <section class="topic-section">
+            <h2>Cara Kerja Variabel dan Tipe Data</h2>
+            <p>Variabel adalah nama yang menunjuk ke sebuah nilai. Python memakai dynamic typing, jadi Anda tidak perlu menulis tipe data saat membuat variabel.</p>
+            <pre class="code-block"><code>nama = "Budi"       # str
+umur = 20           # int
+tinggi = 170.5      # float
+aktif = True        # bool</code></pre>
+            <p>Tipe data tetap penting karena menentukan operasi yang bisa dilakukan.</p>
+            <pre class="code-block"><code>angka = 10
+teks = "10"
+
+print(angka + 5)      # valid
+print(teks + "5")     # valid, hasilnya "105"
+# print(angka + teks) # error: int dan str tidak bisa langsung dijumlahkan</code></pre>
+        </section>
+
+        <section class="topic-section">
+            <h2>Mutable vs Immutable</h2>
+            <p>Mutable berarti nilai bisa diubah setelah dibuat. Immutable berarti nilai tidak bisa diubah langsung.</p>
+            <table class="reference-table">
+                <thead>
+                    <tr>
+                        <th>Jenis</th>
+                        <th>Contoh</th>
+                        <th>Makna</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mutable</td>
+                        <td><code>list</code>, <code>dict</code>, <code>set</code></td>
+                        <td>Isi bisa diubah tanpa membuat objek baru.</td>
+                    </tr>
+                    <tr>
+                        <td>Immutable</td>
+                        <td><code>str</code>, <code>int</code>, <code>float</code>, <code>tuple</code></td>
+                        <td>Perubahan menghasilkan nilai baru.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="topic-section">
+            <h2>OOP dengan Bahasa Sederhana</h2>
+            <p>Object Oriented Programming membantu Anda mengelompokkan data dan perilaku yang saling berhubungan.</p>
+            <ul>
+                <li><strong>Class</strong>: cetakan atau blueprint.</li>
+                <li><strong>Object</strong>: hasil nyata dari class.</li>
+                <li><strong>Atribut</strong>: data milik object.</li>
+                <li><strong>Method</strong>: fungsi milik object.</li>
+            </ul>
+            <pre class="code-block"><code>class Siswa:
+    def __init__(self, nama, nilai):
+        self.nama = nama
+        self.nilai = nilai
+
+    def lulus(self):
+        return self.nilai &gt;= 70
+
+siswa = Siswa("Cici", 85)
+print(siswa.nama)
+print(siswa.lulus())</code></pre>
+            <p>Gunakan OOP saat program punya banyak entitas yang memiliki data dan perilaku. Untuk script kecil, fungsi biasa sering lebih sederhana.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PythonLearn. Dibuat untuk belajar Python dengan lebih fokus.</p>
+    </footer>
+</body>
+</html>

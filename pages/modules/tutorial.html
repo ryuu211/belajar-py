@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#071019">
+    <meta name="description" content="Tutorial belajar Python dari nol untuk pemula: menulis program pertama, memahami variabel, input, percabangan, loop, fungsi, dan membuat mini project CLI.">
+    <title>Tutorial Belajar Python dari Nol | PythonLearn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
+    <nav>
+        <a class="logo" href="../../index.html">PythonLearn</a>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../roadmap.html">Roadmap</a></li>
+            <li><a class="active" href="../modules.html" aria-current="page">Modul</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content" class="content-wrapper">
+        <a href="../modules.html" class="back-link">← Kembali ke Katalog Modul</a>
+        <h1>Tutorial Belajar Python dari Nol</h1>
+        <p>Tutorial ini memandu Anda dari program pertama sampai mini project CLI sederhana. Ikuti urutannya, jalankan setiap kode, lalu ubah nilainya agar konsepnya benar-benar terasa.</p>
+
+        <nav class="doc-nav" aria-label="Daftar isi tutorial">
+            <a href="#program-pertama">Program Pertama</a>
+            <a href="#variabel-input">Variabel dan Input</a>
+            <a href="#alur-program">Alur Program</a>
+            <a href="#mini-project">Mini Project CLI</a>
+        </nav>
+
+        <section class="topic-section" id="program-pertama">
+            <h2>1. Menulis Program Python Pertama</h2>
+            <p>Tujuan langkah ini adalah memastikan Python berjalan dan Anda paham cara melihat output program.</p>
+            <ol class="steps-list">
+                <li>Buka editor kode seperti VS Code.</li>
+                <li>Buat file bernama <code>belajar.py</code>.</li>
+                <li>Tulis kode berikut, lalu jalankan dengan <code>python belajar.py</code>.</li>
+            </ol>
+            <pre class="code-block"><code>print("Halo, Python!")
+print("Saya sedang belajar dari nol.")</code></pre>
+            <div class="note">Jika output muncul di terminal, berarti lingkungan belajar Anda sudah siap.</div>
+        </section>
+
+        <section class="topic-section" id="variabel-input">
+            <h2>2. Menggunakan Variabel dan Input</h2>
+            <p>Variabel menyimpan nilai agar bisa dipakai lagi. Input membuat program menerima data dari pengguna.</p>
+            <pre class="code-block"><code>nama = input("Masukkan nama: ")
+umur = int(input("Masukkan umur: "))
+
+print(f"Halo {nama}, tahun depan umurmu {umur + 1} tahun.")</code></pre>
+            <h3>Yang perlu diperhatikan</h3>
+            <ul>
+                <li><code>input()</code> selalu menghasilkan string.</li>
+                <li>Gunakan <code>int()</code> jika input harus menjadi angka bulat.</li>
+                <li>Gunakan nama variabel yang jelas seperti <code>umur</code>, bukan <code>x</code>.</li>
+            </ul>
+        </section>
+
+        <section class="topic-section" id="alur-program">
+            <h2>3. Membuat Keputusan dan Perulangan</h2>
+            <p>Program menjadi berguna ketika bisa mengambil keputusan dan mengulang pekerjaan.</p>
+            <pre class="code-block"><code>nilai = int(input("Masukkan nilai: "))
+
+if nilai &gt;= 80:
+    print("Bagus, lanjutkan latihan proyek.")
+elif nilai &gt;= 60:
+    print("Cukup, ulangi materi dasar.")
+else:
+    print("Pelajari lagi contoh kode dan latihan kecil.")
+
+for nomor in range(1, 4):
+    print(f"Latihan ke-{nomor}")</code></pre>
+            <p>Gunakan <code>if</code> untuk percabangan. Gunakan <code>for</code> saat jumlah pengulangan sudah diketahui.</p>
+        </section>
+
+        <section class="topic-section" id="mini-project">
+            <h2>4. Mini Project: Daftar Tugas CLI</h2>
+            <p>Project ini melatih list, loop, fungsi, dan input. Program menyimpan daftar tugas selama program berjalan.</p>
+            <pre class="code-block"><code>tugas = []
+
+def tampilkan_menu():
+    print("\n=== Daftar Tugas ===")
+    print("1. Tambah tugas")
+    print("2. Lihat tugas")
+    print("3. Hapus tugas")
+    print("4. Keluar")
+
+def tambah_tugas():
+    nama_tugas = input("Tugas baru: ")
+    tugas.append(nama_tugas)
+    print("Tugas ditambahkan.")
+
+def lihat_tugas():
+    if not tugas:
+        print("Belum ada tugas.")
+        return
+
+    for index, item in enumerate(tugas, start=1):
+        print(f"{index}. {item}")
+
+def hapus_tugas():
+    lihat_tugas()
+    if not tugas:
+        return
+
+    nomor = int(input("Nomor tugas yang dihapus: "))
+    if 1 &lt;= nomor &lt;= len(tugas):
+        tugas.pop(nomor - 1)
+        print("Tugas dihapus.")
+    else:
+        print("Nomor tidak valid.")
+
+while True:
+    tampilkan_menu()
+    pilihan = input("Pilih menu: ")
+
+    if pilihan == "1":
+        tambah_tugas()
+    elif pilihan == "2":
+        lihat_tugas()
+    elif pilihan == "3":
+        hapus_tugas()
+    elif pilihan == "4":
+        print("Sampai jumpa!")
+        break
+    else:
+        print("Pilihan tidak tersedia.")</code></pre>
+            <h3>Tantangan lanjutan</h3>
+            <ul>
+                <li>Tambahkan status selesai atau belum selesai.</li>
+                <li>Simpan data ke file JSON.</li>
+                <li>Tambahkan pencarian tugas berdasarkan kata kunci.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PythonLearn. Dibuat untuk belajar Python dengan lebih fokus.</p>
+    </footer>
+</body>
+</html>

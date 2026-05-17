@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#071019">
+    <meta name="description" content="Referensi teknis Python untuk pemula: cheat sheet sintaks, tipe data, operator, struktur kontrol, fungsi, standard library, dan error umum.">
+    <title>Referensi Teknis Python dan Cheat Sheet | PythonLearn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
+    <nav>
+        <a class="logo" href="../../index.html">PythonLearn</a>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../roadmap.html">Roadmap</a></li>
+            <li><a class="active" href="../modules.html" aria-current="page">Modul</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content" class="content-wrapper">
+        <a href="../modules.html" class="back-link">← Kembali ke Katalog Modul</a>
+        <h1>Referensi Teknis Python dan Cheat Sheet</h1>
+        <p>Gunakan halaman ini sebagai kamus singkat saat lupa sintaks, fungsi bawaan, standard library, atau arti pesan error.</p>
+
+        <section class="topic-section">
+            <h2>Cheat Sheet Sintaks Dasar</h2>
+            <table class="reference-table">
+                <thead>
+                    <tr>
+                        <th>Kebutuhan</th>
+                        <th>Sintaks</th>
+                        <th>Contoh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Output</td>
+                        <td><code>print()</code></td>
+                        <td><code>print("Halo")</code></td>
+                    </tr>
+                    <tr>
+                        <td>Input</td>
+                        <td><code>input()</code></td>
+                        <td><code>nama = input("Nama: ")</code></td>
+                    </tr>
+                    <tr>
+                        <td>Percabangan</td>
+                        <td><code>if / elif / else</code></td>
+                        <td><code>if nilai &gt;= 70:</code></td>
+                    </tr>
+                    <tr>
+                        <td>Loop</td>
+                        <td><code>for</code>, <code>while</code></td>
+                        <td><code>for item in data:</code></td>
+                    </tr>
+                    <tr>
+                        <td>Fungsi</td>
+                        <td><code>def</code></td>
+                        <td><code>def halo():</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="topic-section">
+            <h2>Tipe Data Utama</h2>
+            <table class="reference-table">
+                <thead>
+                    <tr>
+                        <th>Tipe</th>
+                        <th>Fungsi</th>
+                        <th>Contoh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>str</code></td>
+                        <td>Menyimpan teks.</td>
+                        <td><code>"Python"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>int</code></td>
+                        <td>Menyimpan angka bulat.</td>
+                        <td><code>10</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>float</code></td>
+                        <td>Menyimpan angka desimal.</td>
+                        <td><code>3.14</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>bool</code></td>
+                        <td>Menyimpan nilai benar atau salah.</td>
+                        <td><code>True</code>, <code>False</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>list</code></td>
+                        <td>Menyimpan banyak data yang bisa diubah.</td>
+                        <td><code>[1, 2, 3]</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>dict</code></td>
+                        <td>Menyimpan pasangan key-value.</td>
+                        <td><code>{"nama": "Ari"}</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="topic-section">
+            <h2>Standard Library yang Sering Dipakai</h2>
+            <table class="reference-table">
+                <thead>
+                    <tr>
+                        <th>Library</th>
+                        <th>Kegunaan</th>
+                        <th>Contoh Pemakaian</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>math</code></td>
+                        <td>Operasi matematika.</td>
+                        <td><code>math.sqrt(16)</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>random</code></td>
+                        <td>Menghasilkan pilihan acak.</td>
+                        <td><code>random.choice(data)</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>datetime</code></td>
+                        <td>Mengelola tanggal dan waktu.</td>
+                        <td><code>datetime.now()</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>json</code></td>
+                        <td>Membaca dan menulis data JSON.</td>
+                        <td><code>json.load(file)</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>csv</code></td>
+                        <td>Membaca file CSV.</td>
+                        <td><code>csv.DictReader(file)</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>sqlite3</code></td>
+                        <td>Menggunakan database SQLite.</td>
+                        <td><code>sqlite3.connect("app.db")</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="topic-section">
+            <h2>Error Python Umum</h2>
+            <table class="reference-table">
+                <thead>
+                    <tr>
+                        <th>Error</th>
+                        <th>Penyebab Umum</th>
+                        <th>Cara Memperbaiki</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>SyntaxError</code></td>
+                        <td>Sintaks tidak valid.</td>
+                        <td>Cek tanda titik dua, kurung, dan indentasi.</td>
+                    </tr>
+                    <tr>
+                        <td><code>NameError</code></td>
+                        <td>Variabel belum dibuat atau salah ketik.</td>
+                        <td>Pastikan nama variabel sama persis.</td>
+                    </tr>
+                    <tr>
+                        <td><code>TypeError</code></td>
+                        <td>Operasi dilakukan pada tipe data yang tidak cocok.</td>
+                        <td>Konversi tipe data jika perlu.</td>
+                    </tr>
+                    <tr>
+                        <td><code>ValueError</code></td>
+                        <td>Nilai tidak sesuai dengan tipe yang diminta.</td>
+                        <td>Validasi input sebelum dikonversi.</td>
+                    </tr>
+                    <tr>
+                        <td><code>KeyError</code></td>
+                        <td>Key dictionary tidak ditemukan.</td>
+                        <td>Gunakan <code>dict.get()</code> atau cek key terlebih dahulu.</td>
+                    </tr>
+                    <tr>
+                        <td><code>FileNotFoundError</code></td>
+                        <td>File yang dibuka tidak ada.</td>
+                        <td>Periksa path file dan nama file.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PythonLearn. Dibuat untuk belajar Python dengan lebih fokus.</p>
+    </footer>
+</body>
+</html>

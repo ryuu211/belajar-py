@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#071019">
+    <meta name="description" content="10 project Python pemula untuk latihan: kalkulator, tebak angka, to-do list, kasir sederhana, catatan file, kuis, password generator, API, CSV, dan SQLite.">
+    <title>10 Project Python Pemula untuk Latihan | PythonLearn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
+    <nav>
+        <a class="logo" href="../../index.html">PythonLearn</a>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../roadmap.html">Roadmap</a></li>
+            <li><a class="active" href="../modules.html" aria-current="page">Modul</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content" class="content-wrapper">
+        <a href="../modules.html" class="back-link">← Kembali ke Katalog Modul</a>
+        <h1>10 Project Python Pemula untuk Latihan</h1>
+        <p>Project adalah cara tercepat untuk mengubah teori menjadi kemampuan. Mulai dari project kecil, pahami konsepnya, lalu tambah fitur sedikit demi sedikit.</p>
+
+        <nav class="doc-nav" aria-label="Daftar project Python">
+            <a href="#kalkulator">Kalkulator</a>
+            <a href="#tebak-angka">Tebak Angka</a>
+            <a href="#todo-list">To-do List</a>
+            <a href="#kasir">Kasir</a>
+            <a href="#catatan">Catatan File</a>
+        </nav>
+
+        <section class="topic-section" id="kalkulator">
+            <h2>1. Kalkulator Sederhana</h2>
+            <p><strong>Tujuan:</strong> melatih input, konversi tipe data, operator, dan percabangan.</p>
+            <pre class="code-block"><code>angka_1 = float(input("Angka pertama: "))
+operator = input("Operator (+, -, *, /): ")
+angka_2 = float(input("Angka kedua: "))
+
+if operator == "+":
+    hasil = angka_1 + angka_2
+elif operator == "-":
+    hasil = angka_1 - angka_2
+elif operator == "*":
+    hasil = angka_1 * angka_2
+elif operator == "/":
+    hasil = angka_1 / angka_2
+else:
+    hasil = "Operator tidak dikenal"
+
+print(f"Hasil: {hasil}")</code></pre>
+            <h3>Ide pengembangan</h3>
+            <ul>
+                <li>Tangani pembagian dengan 0.</li>
+                <li>Tambahkan operasi pangkat dan modulus.</li>
+                <li>Buat kalkulator berjalan berulang sampai pengguna keluar.</li>
+            </ul>
+        </section>
+
+        <section class="topic-section" id="tebak-angka">
+            <h2>2. Game Tebak Angka</h2>
+            <p><strong>Tujuan:</strong> melatih loop, random number, percabangan, dan validasi input.</p>
+            <pre class="code-block"><code>import random
+
+angka_rahasia = random.randint(1, 10)
+
+while True:
+    tebakan = int(input("Tebak angka 1-10: "))
+
+    if tebakan == angka_rahasia:
+        print("Benar!")
+        break
+    elif tebakan &lt; angka_rahasia:
+        print("Terlalu kecil.")
+    else:
+        print("Terlalu besar.")</code></pre>
+            <h3>Ide pengembangan</h3>
+            <ul>
+                <li>Batasi jumlah percobaan.</li>
+                <li>Simpan skor terbaik.</li>
+                <li>Tambahkan level mudah, sedang, dan sulit.</li>
+            </ul>
+        </section>
+
+        <section class="topic-section" id="todo-list">
+            <h2>3. To-do List CLI</h2>
+            <p><strong>Tujuan:</strong> melatih list, fungsi, menu terminal, dan pengelolaan data sederhana.</p>
+            <pre class="code-block"><code>tugas = []
+
+def tambah_tugas(nama):
+    tugas.append(nama)
+
+def lihat_tugas():
+    for nomor, item in enumerate(tugas, start=1):
+        print(f"{nomor}. {item}")
+
+tambah_tugas("Belajar fungsi")
+tambah_tugas("Membuat project CLI")
+lihat_tugas()</code></pre>
+            <h3>Ide pengembangan</h3>
+            <ul>
+                <li>Tambahkan fitur hapus tugas.</li>
+                <li>Tambahkan status selesai.</li>
+                <li>Simpan tugas ke file JSON.</li>
+            </ul>
+        </section>
+
+        <section class="topic-section" id="kasir">
+            <h2>4. Program Kasir Sederhana</h2>
+            <p><strong>Tujuan:</strong> melatih dictionary, loop, perhitungan total, dan format output.</p>
+            <pre class="code-block"><code>keranjang = {
+    "roti": 12000,
+    "susu": 18000,
+    "telur": 25000,
+}
+
+total = 0
+
+for nama_barang, harga in keranjang.items():
+    print(f"{nama_barang}: Rp{harga}")
+    total += harga
+
+print(f"Total belanja: Rp{total}")</code></pre>
+            <h3>Ide pengembangan</h3>
+            <ul>
+                <li>Tambahkan jumlah barang.</li>
+                <li>Hitung diskon.</li>
+                <li>Cetak struk belanja.</li>
+            </ul>
+        </section>
+
+        <section class="topic-section" id="catatan">
+            <h2>5. Aplikasi Catatan Berbasis File</h2>
+            <p><strong>Tujuan:</strong> melatih file handling dan mode <code>w</code>, <code>a</code>, serta <code>r</code>.</p>
+            <pre class="code-block"><code>catatan = input("Tulis catatan: ")
+
+with open("catatan.txt", "a", encoding="utf-8") as file:
+    file.write(catatan + "\n")
+
+with open("catatan.txt", "r", encoding="utf-8") as file:
+    print(file.read())</code></pre>
+            <h3>Ide pengembangan</h3>
+            <ul>
+                <li>Tambahkan tanggal otomatis.</li>
+                <li>Buat fitur cari catatan.</li>
+                <li>Tambahkan fitur hapus semua catatan.</li>
+            </ul>
+        </section>
+
+        <section class="topic-section">
+            <h2>6. Kuis Pilihan Ganda</h2>
+            <p><strong>Tujuan:</strong> melatih list of dictionary, loop, validasi jawaban, dan skor.</p>
+            <pre class="code-block"><code>soal = [
+    {"tanya": "Tipe data untuk teks?", "jawab": "str"},
+    {"tanya": "Keyword membuat fungsi?", "jawab": "def"},
+]
+
+skor = 0
+
+for item in soal:
+    jawaban = input(item["tanya"] + " ")
+    if jawaban.lower() == item["jawab"]:
+        skor += 1
+
+print(f"Skor: {skor}/{len(soal)}")</code></pre>
+        </section>
+
+        <section class="topic-section">
+            <h2>7. Password Generator</h2>
+            <p><strong>Tujuan:</strong> melatih string, random, loop, dan penggabungan karakter.</p>
+            <pre class="code-block"><code>import random
+import string
+
+panjang = int(input("Panjang password: "))
+karakter = string.ascii_letters + string.digits + "!@#$%"
+
+password = ""
+for _ in range(panjang):
+    password += random.choice(karakter)
+
+print(password)</code></pre>
+        </section>
+
+        <section class="topic-section">
+            <h2>8. Cek Profil GitHub dari API</h2>
+            <p><strong>Tujuan:</strong> melatih request API, JSON, status code, dan dictionary.</p>
+            <pre class="code-block"><code>import requests
+
+username = input("Username GitHub: ")
+url = f"https://api.github.com/users/{username}"
+
+response = requests.get(url, timeout=10)
+
+if response.status_code == 200:
+    data = response.json()
+    print(data["login"])
+    print(data["public_repos"])
+else:
+    print("User tidak ditemukan.")</code></pre>
+        </section>
+
+        <section class="topic-section">
+            <h2>9. Pembaca File CSV</h2>
+            <p><strong>Tujuan:</strong> melatih standard library <code>csv</code> dan pengolahan data tabel.</p>
+            <pre class="code-block"><code>import csv
+
+with open("nilai.csv", "r", encoding="utf-8") as file:
+    reader = csv.DictReader(file)
+    for baris in reader:
+        print(f"{baris['nama']} mendapat nilai {baris['nilai']}")</code></pre>
+            <div class="note">Buat file <code>nilai.csv</code> dengan kolom <code>nama,nilai</code> sebelum menjalankan contoh ini.</div>
+        </section>
+
+        <section class="topic-section">
+            <h2>10. Database Kontak dengan SQLite</h2>
+            <p><strong>Tujuan:</strong> mengenal database lokal, query SQL dasar, dan penyimpanan permanen.</p>
+            <pre class="code-block"><code>import sqlite3
+
+conn = sqlite3.connect("kontak.db")
+cursor = conn.cursor()
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS kontak (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nama TEXT,
+    nomor TEXT
+)
+""")
+
+cursor.execute(
+    "INSERT INTO kontak (nama, nomor) VALUES (?, ?)",
+    ("Ari", "08123456789")
+)
+
+conn.commit()
+conn.close()</code></pre>
+            <h3>Ide pengembangan</h3>
+            <ul>
+                <li>Tambahkan fitur lihat semua kontak.</li>
+                <li>Tambahkan fitur ubah nomor.</li>
+                <li>Tambahkan fitur hapus kontak.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PythonLearn. Dibuat untuk belajar Python dengan lebih fokus.</p>
+    </footer>
+</body>
+</html>
