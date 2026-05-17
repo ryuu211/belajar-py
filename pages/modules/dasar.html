@@ -3,31 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dasar-dasar Python - PythonLearn</title>
+    <meta name="theme-color" content="#071019">
+    <meta name="description" content="Modul Python dasar untuk pemula: belajar variabel, tipe data, if else, loop, list, tuple, dictionary, fungsi, lambda, dan kuis cepat.">
+    <title>Modul Python Dasar untuk Pemula | PythonLearn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/style.css">
-    <style>
-        .content-wrapper { padding: 40px 5%; max-width: 1000px; margin: auto; }
-        .topic-section { background: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .topic-section h2 { color: #3776ab; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .code-block { background: #272822; color: #f8f8f2; padding: 20px; border-radius: 8px; font-family: 'Consolas', 'Monaco', monospace; margin: 15px 0; overflow-x: auto; white-space: pre; line-height: 1.5; }
-        .note { background: #fff3cd; border-left: 5px solid #ffeeba; padding: 15px; margin: 20px 0; border-radius: 5px; font-style: italic; }
-        .back-link { display: inline-block; margin-bottom: 20px; color: #3776ab; text-decoration: none; font-weight: bold; }
-    </style>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
     <nav>
-        <div class="logo">PythonLearn</div>
+        <a class="logo" href="../../index.html">PythonLearn</a>
         <ul>
             <li><a href="../../index.html">Home</a></li>
             <li><a href="../roadmap.html">Roadmap</a></li>
-            <li><a href="../modules.html">Modul</a></li>
+            <li><a class="active" href="../modules.html" aria-current="page">Modul</a></li>
         </ul>
     </nav>
 
-    <div class="content-wrapper">
+    <main id="main-content" class="content-wrapper">
         <a href="../modules.html" class="back-link">← Kembali ke Katalog Modul</a>
-        <h1>Level 1: Fondasi Python</h1>
-        <p>Halaman ini membahas segala hal yang perlu Anda ketahui sebagai pemula untuk mulai menulis kode Python.</p>
+        <h1>Modul Python Dasar untuk Pemula</h1>
+        <p>Pelajari fondasi Python dari nol: variabel, tipe data, percabangan, perulangan, koleksi data, fungsi, dan lambda. Modul ini cocok untuk pemula yang baru mulai menulis kode Python.</p>
 
         <div class="topic-section">
             <h2>1. Variabel & Tipe Data</h2>
@@ -41,7 +39,7 @@
                 <li><strong>Boolean (bool)</strong>: Nilai kebenaran, hanya <code>True</code> atau <code>False</code>.</li>
             </ul>
 
-            <div class="code-block"># Contoh Tipe Data Dasar
+            <pre class="code-block"><code># Contoh Tipe Data Dasar
 nama = "Andi"          # String
 umur = 25               # Integer
 tinggi = 170.5          # Float
@@ -51,7 +49,7 @@ is_active = True        # Boolean
 umur_str = str(umur)    # Mengubah integer ke string
 angka_float = float(10) # Hasil: 10.0
 
-print(f"{nama} berumur {umur} tahun.")</div>
+print(f"{nama} berumur {umur} tahun.")</code></pre>
             <div class="note">Tips: Gunakan nama variabel yang deskriptif (contoh: 'harga_produk' lebih baik daripada 'hp').</div>
         </div>
 
@@ -60,32 +58,32 @@ print(f"{nama} berumur {umur} tahun.")</div>
             <p>Mengatur jalannya program berdasarkan kondisi tertentu atau pengulangan.</p>
             
             <h3>Kondisional (if, elif, else):</h3>
-            <div class="code-block">nilai = 75
+            <pre class="code-block"><code>nilai = 75
 if nilai >= 80:
     print("Nilai A")
 elif nilai >= 70:
     print("Nilai B")
 else:
-    print("Nilai C")</div>
+    print("Nilai C")</code></pre>
 
             <h3>Perulangan (Loops):</h3>
-            <div class="code-block"># For Loop: Digunakan saat jumlah iterasi sudah diketahui
+            <pre class="code-block"><code># For Loop: Digunakan saat jumlah iterasi sudah diketahui
 buah = ["Apel", "Mangga", "Jeruk"]
 for b in buah:
     print(f"Buah: {b}")
 
 # While Loop: Digunakan selama kondisi masih True
 hitung = 0
-while hitung < 3:
+while hitung &lt; 3:
     print(f"Hitungan ke-{hitung}")
-    hitung += 1</div>
+    hitung += 1</code></pre>
         </div>
 
         <div class="topic-section">
             <h2>3. Koleksi Data (List, Tuple, Set, Dict)</h2>
             <p>Python menyediakan struktur data bawaan untuk menyimpan banyak nilai dalam satu variabel.</p>
             
-            <div class="code-block"># List: Urut, bisa diubah (Mutable), boleh duplikat
+            <pre class="code-block"><code># List: Urut, bisa diubah (Mutable), boleh duplikat
 my_list = [1, 2, 3, "Python"]
 my_list.append("Keren") # Menambah data
 
@@ -97,13 +95,13 @@ my_set = {1, 2, 2, 3} # Hasilnya: {1, 2, 3}
 
 # Dictionary: Pasangan Key-Value
 my_dict = {"nama": "Andi", "umur": 25}
-print(my_dict["nama"])</div>
+print(my_dict["nama"])</code></pre>
         </div>
 
         <div class="topic-section">
             <h2>4. Fungsi Dasar & Lambda</h2>
             <p>Fungsi membantu Anda menghindari pengulangan kode (DRY - Don't Repeat Yourself).</p>
-            <div class="code-block"># Fungsi Biasa dengan Parameter & Return
+            <pre class="code-block"><code># Fungsi Biasa dengan Parameter & Return
 def hitung_luas(p, l):
     return p * l
 
@@ -112,20 +110,20 @@ print(f"Luas: {hasil}")
 
 # Lambda Function: Fungsi anonim satu baris
 kali_dua = lambda x: x * 2
-print(f"Hasil: {kali_dua(10)}")</div>
+print(f"Hasil: {kali_dua(10)}")</code></pre>
         </div>
 
         <div class="quiz-container">
-            <h2>🎯 Kuis Cepat: Level 1</h2>
+            <h2><span aria-hidden="true">🎯</span> Kuis Cepat: Level 1</h2>
             <p>Uji pemahaman Anda tentang dasar-dasar Python!</p>
             <div id="quiz-box">
-                <div class="quiz-question" id="question">Loading question...</div>
+                <div class="quiz-question" id="question">Loading…</div>
                 <div class="quiz-options" id="options"></div>
-                <div id="quiz-result"></div>
-                <button class="next-btn" id="next-btn" onclick="loadQuestion()">Pertanyaan Selanjutnya</button>
+                <div id="quiz-result" aria-live="polite"></div>
+                <button class="next-btn" id="next-btn" type="button" onclick="loadQuestion()">Pertanyaan Selanjutnya</button>
             </div>
         </div>
-    </div>
+    </main>
 
     <script>
         const quizData = [
@@ -173,6 +171,7 @@ print(f"Hasil: {kali_dua(10)}")</div>
 
             currentQuestion.options.forEach((option, index) => {
                 const button = document.createElement('button');
+                button.type = 'button';
                 button.innerText = option;
                 button.classList.add('option-btn');
                 button.onclick = () => checkAnswer(index);
@@ -215,7 +214,7 @@ print(f"Hasil: {kali_dua(10)}")</div>
     </script>
 
     <footer>
-        <p>&copy; 2026 BelajarPython - Dibuat untuk Saya☆*: .｡. o(≧▽≦)o .｡.:*☆</p>
+        <p>&copy; 2026 PythonLearn. Dibuat untuk belajar Python dengan lebih fokus.</p>
     </footer>
 </body>
 </html>

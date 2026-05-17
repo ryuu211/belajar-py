@@ -3,44 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belajar Python - Roadmap Interaktif</title>
+    <meta name="theme-color" content="#071019">
+    <meta name="description" content="Belajar Python dari nol dengan roadmap interaktif, modul dasar hingga lanjutan, contoh kode, kuis, dan jalur proyek praktis untuk pemula.">
+    <title>Belajar Python dari Nol: Roadmap & Modul | PythonLearn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
     <nav>
-        <div class="logo">PythonLearn</div>
+        <a class="logo" href="index.html">PythonLearn</a>
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="index.html" aria-current="page">Home</a></li>
             <li><a href="pages/roadmap.html">Roadmap</a></li>
             <li><a href="pages/modules.html">Modul</a></li>
         </ul>
     </nav>
 
     <header>
-        <h1>Kuasai Python dari Nol</h1>
-        <p>Panduan langkah demi langkah untuk menjadi Python Developer handal.</p>
-        <a href="pages/roadmap.html" class="btn">Mulai Belajar</a>
+        <div class="hero-copy">
+            <span class="eyebrow">Roadmap interaktif untuk pemula</span>
+            <h1>Belajar Python dari Nol hingga Siap Membuat Proyek.</h1>
+            <p>PythonLearn membantu pemula belajar Python secara bertahap lewat roadmap, modul dasar, contoh kode, kuis, dan latihan proyek praktis.</p>
+            <div class="hero-actions">
+                <a href="pages/roadmap.html" class="btn">Mulai Roadmap</a>
+                <a href="pages/modules.html" class="btn btn-ghost">Lihat Modul</a>
+            </div>
+        </div>
+        <div class="hero-panel" aria-label="Cuplikan kode Python">
+            <div class="panel-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <pre><code>journey = ["basic", "oop", "data", "project"]
+
+for step in journey:
+    learn(step)
+    build_portfolio()
+
+print("Siap jadi Python builder")</code></pre>
+        </div>
     </header>
 
-    <main>
-        <section class="features">
-            <div class="feature-card">
-                <h3>Kurikulum Terstruktur</h3>
-                <p>Belajar dari dasar hingga tingkat lanjut dengan roadmap yang jelas.</p>
+    <main id="main-content">
+        <section class="learning-path" aria-labelledby="path-title">
+            <div>
+                <span class="section-kicker">Belajar berurutan</span>
+                <h2 id="path-title">Roadmap Python yang jelas dari dasar sampai praktik.</h2>
             </div>
-            <div class="feature-card">
-                <h3>Interaktif</h3>
-                <p>Contoh kode dan kuis interaktif untuk menguji kemampuan Anda.</p>
+            <div class="path-track">
+                <article>
+                    <span>01</span>
+                    <h3>Fondasi</h3>
+                    <p>Variabel, tipe data, kontrol alur, fungsi, dan struktur data.</p>
+                </article>
+                <article>
+                    <span>02</span>
+                    <h3>Menengah</h3>
+                    <p>OOP, file handling, error handling, decorator, dan package.</p>
+                </article>
+                <article>
+                    <span>03</span>
+                    <h3>Praktis</h3>
+                    <p>API, scraping, database, analisis data, dan mini project.</p>
+                </article>
             </div>
-            <div class="feature-card">
-                <h3>Berorientasi Proyek</h3>
-                <p>Terapkan ilmu Anda dalam proyek nyata untuk membangun portofolio.</p>
+        </section>
+
+        <section class="feature-section" aria-labelledby="features-title">
+            <div class="section-intro">
+                <span class="section-kicker">Kenapa PythonLearn</span>
+                <h2 id="features-title">Belajar Python lebih mudah dengan materi yang terarah.</h2>
+                <p>Setiap modul dibuat untuk membantu Anda memahami konsep, mencoba contoh kode, lalu menghubungkannya ke proyek nyata.</p>
             </div>
+            <div class="features">
+                <div class="feature-card">
+                    <span class="card-icon" aria-hidden="true">//</span>
+                    <h3>Kurikulum Python Terstruktur</h3>
+                    <p>Belajar dari dasar hingga tingkat lanjut dengan roadmap Python yang jelas.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="card-icon" aria-hidden="true">?</span>
+                    <h3>Kuis dan Contoh Kode</h3>
+                    <p>Uji pemahaman Anda lewat kuis singkat dan contoh kode Python yang langsung bisa dipraktikkan.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="card-icon" aria-hidden="true">{ }</span>
+                    <h3>Latihan Berorientasi Proyek</h3>
+                    <p>Terapkan ilmu Python dalam mini project untuk membangun portofolio belajar.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-strip">
+            <p>Siap mulai dari nol?</p>
+            <a href="pages/modules/dasar.html">Buka modul dasar</a>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 BelajarPython - Dibuat untuk Saya☆*: .｡. o(≧▽≦)o .｡.:*☆</p>
+        <p>&copy; 2026 PythonLearn. Dibuat untuk belajar Python dengan lebih fokus.</p>
     </footer>
 </body>
 </html>

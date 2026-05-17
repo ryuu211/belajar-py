@@ -3,36 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intermediate Python - PythonLearn</title>
+    <meta name="theme-color" content="#071019">
+    <meta name="description" content="Modul Python menengah untuk belajar OOP, class, object, inheritance, file handling, error handling, list comprehension, decorator, dan generator.">
+    <title>Modul Python Menengah: OOP & File Handling | PythonLearn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/style.css">
-    <style>
-        .content-wrapper { padding: 40px 5%; max-width: 1000px; margin: auto; }
-        .topic-section { background: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .topic-section h2 { color: #3776ab; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .code-block { background: #272822; color: #f8f8f2; padding: 20px; border-radius: 8px; font-family: 'Consolas', 'Monaco', monospace; margin: 15px 0; overflow-x: auto; white-space: pre; line-height: 1.5; }
-        .note { background: #e7f3ff; border-left: 5px solid #3776ab; padding: 15px; margin: 20px 0; border-radius: 5px; }
-        .back-link { display: inline-block; margin-bottom: 20px; color: #3776ab; text-decoration: none; font-weight: bold; }
-    </style>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
     <nav>
-        <div class="logo">PythonLearn</div>
+        <a class="logo" href="../../index.html">PythonLearn</a>
         <ul>
             <li><a href="../../index.html">Home</a></li>
             <li><a href="../roadmap.html">Roadmap</a></li>
-            <li><a href="../modules.html">Modul</a></li>
+            <li><a class="active" href="../modules.html" aria-current="page">Modul</a></li>
         </ul>
     </nav>
 
-    <div class="content-wrapper">
+    <main id="main-content" class="content-wrapper">
         <a href="../modules.html" class="back-link">← Kembali ke Katalog Modul</a>
-        <h1>Level 2: Python Menengah</h1>
-        <p>Tingkatkan kemampuan Anda dengan konsep pemrograman yang lebih terstruktur dan efisien.</p>
+        <h1>Modul Python Menengah: OOP dan File Handling</h1>
+        <p>Tingkatkan kemampuan Python dengan konsep yang lebih terstruktur: OOP, class, object, inheritance, file handling, error handling, list comprehension, dan decorator.</p>
 
         <div class="topic-section">
             <h2>1. Pemrograman Berorientasi Objek (OOP)</h2>
             <p>OOP memungkinkan Anda mengorganisir kode menggunakan "Objek" yang memiliki data (atribut) dan perilaku (metode).</p>
-            <div class="code-block">class Mobil:
+            <pre class="code-block"><code>class Mobil:
     def __init__(self, merk, warna):
         self.merk = merk
         self.warna = warna
@@ -42,14 +40,14 @@
 
 # Membuat objek dari class Mobil
 mobil1 = Mobil("Toyota", "Hitam")
-print(mobil1.klakson())</div>
+print(mobil1.klakson())</code></pre>
             <div class="note">Konsep Penting: <b>Inheritance</b> (pewarisan sifat), <b>Polymorphism</b> (banyak bentuk), dan <b>Encapsulation</b> (penyembunyian data).</div>
         </div>
 
         <div class="topic-section">
             <h2>2. Penanganan File & Error</h2>
             <p>Belajar mengelola data eksternal dan memastikan program tidak crash saat terjadi kesalahan.</p>
-            <div class="code-block"># Membaca File dengan Context Manager
+            <pre class="code-block"><code># Membaca File dengan Context Manager
 try:
     with open("data.txt", "r") as file:
         konten = file.read()
@@ -57,13 +55,13 @@ try:
 except FileNotFoundError:
     print("Error: File tidak ditemukan!")
 finally:
-    print("Operasi selesai.")</div>
+    print("Operasi selesai.")</code></pre>
         </div>
 
         <div class="topic-section">
             <h2>3. Fitur Lanjutan (Advanced Features)</h2>
             <p>Tulis kode yang lebih ringkas (Pythonic) menggunakan Comprehensions dan Decorators.</p>
-            <div class="code-block"># List Comprehension (Membuat list baru secara ringkas)
+            <pre class="code-block"><code># List Comprehension (Membuat list baru secara ringkas)
 angka = [1, 2, 3, 4, 5]
 kuadrat = [x**2 for x in angka if x % 2 == 0] 
 # Hasil: [4, 16]
@@ -71,7 +69,7 @@ kuadrat = [x**2 for x in angka if x % 2 == 0]
 # Decorator sederhana
 def cetak_log(fungsi):
     def wrapper():
-        print("Log: Fungsi dimulai...")
+        print("Log: Fungsi dimulai…")
         fungsi()
         print("Log: Fungsi selesai.")
     return wrapper
@@ -80,12 +78,12 @@ def cetak_log(fungsi):
 def halo():
     print("Halo Dunia!")
 
-halo()</div>
+halo()</code></pre>
         </div>
-    </div>
+    </main>
 
     <footer>
-        <p>&copy; 2026 BelajarPython - Dibuat untuk Saya☆*: .｡. o(≧▽≦)o .｡.:*☆</p>
+        <p>&copy; 2026 PythonLearn. Dibuat untuk belajar Python dengan lebih fokus.</p>
     </footer>
 </body>
 </html>

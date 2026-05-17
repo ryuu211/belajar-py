@@ -3,36 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Python - PythonLearn</title>
+    <meta name="theme-color" content="#071019">
+    <meta name="description" content="Modul Python lanjutan untuk belajar web scraping, API, analisis data dengan NumPy dan Pandas, database SQLite, dan proyek praktis.">
+    <title>Modul Python Lanjutan: Scraping, Data & SQLite | PythonLearn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/style.css">
-    <style>
-        .content-wrapper { padding: 40px 5%; max-width: 1000px; margin: auto; }
-        .topic-section { background: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .topic-section h2 { color: #3776ab; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .code-block { background: #272822; color: #f8f8f2; padding: 20px; border-radius: 8px; font-family: 'Consolas', 'Monaco', monospace; margin: 15px 0; overflow-x: auto; white-space: pre; line-height: 1.5; }
-        .note { background: #f0fdf4; border-left: 5px solid #22c55e; padding: 15px; margin: 20px 0; border-radius: 5px; }
-        .back-link { display: inline-block; margin-bottom: 20px; color: #3776ab; text-decoration: none; font-weight: bold; }
-    </style>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
     <nav>
-        <div class="logo">PythonLearn</div>
+        <a class="logo" href="../../index.html">PythonLearn</a>
         <ul>
             <li><a href="../../index.html">Home</a></li>
             <li><a href="../roadmap.html">Roadmap</a></li>
-            <li><a href="../modules.html">Modul</a></li>
+            <li><a class="active" href="../modules.html" aria-current="page">Modul</a></li>
         </ul>
     </nav>
 
-    <div class="content-wrapper">
+    <main id="main-content" class="content-wrapper">
         <a href="../modules.html" class="back-link">← Kembali ke Katalog Modul</a>
-        <h1>Level 3: Penerapan Praktis (Advanced)</h1>
-        <p>Terapkan pengetahuan Python Anda untuk membangun aplikasi dunia nyata, analisis data, dan otomatisasi.</p>
+        <h1>Modul Python Lanjutan: Scraping, Data, dan SQLite</h1>
+        <p>Terapkan Python untuk kebutuhan praktis seperti web scraping, integrasi API, analisis data dengan NumPy dan Pandas, database SQLite, dan otomatisasi sederhana.</p>
 
         <div class="topic-section">
             <h2>1. Web Scraping & API</h2>
-            <p>Mengambil data secara otomatis dari website menggunakan library <code style="background:#eee; padding:2px 4px; border-radius:3px;">requests</code> dan <code style="background:#eee; padding:2px 4px; border-radius:3px;">BeautifulSoup</code>.</p>
-            <div class="code-block">import requests
+            <p>Mengambil data secara otomatis dari website menggunakan library <code>requests</code> dan <code>BeautifulSoup</code>.</p>
+            <pre class="code-block"><code>import requests
 from bs4 import BeautifulSoup
 
 url = "https://example.com"
@@ -41,14 +39,14 @@ soup = BeautifulSoup(response.text, 'html.parser')
 
 # Mengambil semua tag h1 di halaman
 for h1 in soup.find_all('h1'):
-    print(h1.text)</div>
-            <div class="note">Kebutuhan: Install library dengan <code style="background:#eee; padding:2px 4px; border-radius:3px;">pip install requests beautifulsoup4</code>.</div>
+    print(h1.text)</code></pre>
+            <div class="note">Kebutuhan: Install library dengan <code>pip install requests beautifulsoup4</code>.</div>
         </div>
 
         <div class="topic-section">
             <h2>2. Analisis Data (NumPy & Pandas)</h2>
             <p>Python adalah raja dalam data science. Gunakan Pandas untuk mengelola data tabel (DataFrame).</p>
-            <div class="code-block">import pandas as pd
+            <pre class="code-block"><code>import pandas as pd
 import numpy as np
 
 # Membuat dataset sederhana
@@ -60,13 +58,13 @@ df = pd.DataFrame(data)
 
 # Menghitung rata-rata skor
 rata_rata = df['Skor'].mean()
-print(f"Rata-rata Skor: {rata_rata}")</div>
+print(f"Rata-rata Skor: {rata_rata}")</code></pre>
         </div>
 
         <div class="topic-section">
             <h2>3. Database (SQLite)</h2>
             <p>Menyimpan data secara permanen menggunakan SQL database yang terintegrasi dengan Python.</p>
-            <div class="code-block">import sqlite3
+            <pre class="code-block"><code>import sqlite3
 
 # Koneksi ke database (akan dibuat jika belum ada)
 conn = sqlite3.connect('belajar.db')
@@ -78,12 +76,12 @@ cursor.execute('CREATE TABLE IF NOT EXISTS user (nama TEXT, umur INTEGER)')
 # Menambah data
 cursor.execute('INSERT INTO user VALUES ("Dedi", 22)')
 conn.commit()
-conn.close()</div>
+conn.close()</code></pre>
         </div>
-    </div>
+    </main>
 
     <footer>
-        <p>&copy; 2026 BelajarPython - Dibuat untuk Saya☆*: .｡. o(≧▽≦)o .｡.:*☆</p>
+        <p>&copy; 2026 PythonLearn. Dibuat untuk belajar Python dengan lebih fokus.</p>
     </footer>
 </body>
 </html>
