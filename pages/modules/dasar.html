@@ -5,7 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#071019">
     <meta name="description" content="Modul Python dasar untuk pemula: belajar variabel, tipe data, if else, loop, list, tuple, dictionary, fungsi, lambda, dan kuis cepat.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://ryuu211.github.io/belajar-py/pages/modules/dasar.html">
     <title>Modul Python Dasar untuk Pemula | PythonLearn</title>
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="PythonLearn">
+    <meta property="og:title" content="Modul Python Dasar untuk Pemula | PythonLearn">
+    <meta property="og:description" content="Modul Python dasar untuk pemula: belajar variabel, tipe data, if else, loop, list, tuple, dictionary, fungsi, lambda, dan kuis cepat.">
+    <meta property="og:url" content="https://ryuu211.github.io/belajar-py/pages/modules/dasar.html">
+    <meta name="twitter:card" content="summary">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -13,7 +22,7 @@
 </head>
 <body>
     <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
-    <nav>
+    <nav aria-label="Navigasi utama">
         <a class="logo" href="../../index.html">PythonLearn</a>
         <ul>
             <li><a href="../../index.html">Home</a></li>
@@ -27,10 +36,10 @@
         <h1>Modul Python Dasar untuk Pemula</h1>
         <p>Pelajari fondasi Python dari nol: variabel, tipe data, percabangan, perulangan, koleksi data, fungsi, dan lambda. Modul ini cocok untuk pemula yang baru mulai menulis kode Python.</p>
 
-        <div class="topic-section">
-            <h2>1. Variabel & Tipe Data</h2>
+        <section class="topic-section">
+            <h2>1. Variabel &amp; Tipe Data</h2>
             <p>Variabel adalah wadah untuk menyimpan data. Di Python, Anda tidak perlu menentukan tipe data secara manual (Dynamic Typing).</p>
-            
+
             <h3>Tipe Data Utama:</h3>
             <ul>
                 <li><strong>String (str)</strong>: Teks, diapit tanda kutip " " atau ' '.</li>
@@ -51,12 +60,12 @@ angka_float = float(10) # Hasil: 10.0
 
 print(f"{nama} berumur {umur} tahun.")</code></pre>
             <div class="note">Tips: Gunakan nama variabel yang deskriptif (contoh: 'harga_produk' lebih baik daripada 'hp').</div>
-        </div>
+        </section>
 
-        <div class="topic-section">
+        <section class="topic-section">
             <h2>2. Struktur Kontrol (Alur Program)</h2>
             <p>Mengatur jalannya program berdasarkan kondisi tertentu atau pengulangan.</p>
-            
+
             <h3>Kondisional (if, elif, else):</h3>
             <pre class="code-block"><code>nilai = 75
 if nilai >= 80:
@@ -77,12 +86,12 @@ hitung = 0
 while hitung &lt; 3:
     print(f"Hitungan ke-{hitung}")
     hitung += 1</code></pre>
-        </div>
+        </section>
 
-        <div class="topic-section">
+        <section class="topic-section">
             <h2>3. Koleksi Data (List, Tuple, Set, Dict)</h2>
             <p>Python menyediakan struktur data bawaan untuk menyimpan banyak nilai dalam satu variabel.</p>
-            
+
             <pre class="code-block"><code># List: Urut, bisa diubah (Mutable), boleh duplikat
 my_list = [1, 2, 3, "Python"]
 my_list.append("Keren") # Menambah data
@@ -96,12 +105,12 @@ my_set = {1, 2, 2, 3} # Hasilnya: {1, 2, 3}
 # Dictionary: Pasangan Key-Value
 my_dict = {"nama": "Andi", "umur": 25}
 print(my_dict["nama"])</code></pre>
-        </div>
+        </section>
 
-        <div class="topic-section">
-            <h2>4. Fungsi Dasar & Lambda</h2>
+        <section class="topic-section">
+            <h2>4. Fungsi Dasar &amp; Lambda</h2>
             <p>Fungsi membantu Anda menghindari pengulangan kode (DRY - Don't Repeat Yourself).</p>
-            <pre class="code-block"><code># Fungsi Biasa dengan Parameter & Return
+            <pre class="code-block"><code># Fungsi Biasa dengan Parameter &amp; Return
 def hitung_luas(p, l):
     return p * l
 
@@ -111,18 +120,18 @@ print(f"Luas: {hasil}")
 # Lambda Function: Fungsi anonim satu baris
 kali_dua = lambda x: x * 2
 print(f"Hasil: {kali_dua(10)}")</code></pre>
-        </div>
+        </section>
 
-        <div class="quiz-container">
-            <h2><span aria-hidden="true">🎯</span> Kuis Cepat: Level 1</h2>
-            <p>Uji pemahaman Anda tentang dasar-dasar Python!</p>
-            <div id="quiz-box">
+        <section class="quiz-container" aria-labelledby="quiz-title">
+            <h2 id="quiz-title"><span aria-hidden="true">🎯</span> Kuis Cepat: Level 1</h2>
+            <p id="quiz-instructions">Uji pemahaman Anda tentang dasar-dasar Python. Pilih satu jawaban untuk melihat hasilnya.</p>
+            <div id="quiz-box" aria-describedby="quiz-instructions">
                 <div class="quiz-question" id="question">Loading…</div>
-                <div class="quiz-options" id="options"></div>
-                <div id="quiz-result" aria-live="polite"></div>
-                <button class="next-btn" id="next-btn" type="button" onclick="loadQuestion()">Pertanyaan Selanjutnya</button>
+                <div class="quiz-options" id="options" role="group" aria-labelledby="question"></div>
+                <div id="quiz-result" role="status" aria-live="polite" aria-atomic="true"></div>
+                <button class="next-btn" id="next-btn" type="button">Pertanyaan Selanjutnya</button>
             </div>
-        </div>
+        </section>
     </main>
 
     <script>
@@ -155,6 +164,14 @@ print(f"Hasil: {kali_dua(10)}")</code></pre>
         ];
 
         let currentQuestionIndex = 0;
+        let hasAnswered = false;
+
+        function addAnswerStatus(button, statusText) {
+            const status = document.createElement('span');
+            status.className = 'answer-status';
+            status.textContent = statusText;
+            button.appendChild(status);
+        }
 
         function loadQuestion() {
             const questionEl = document.getElementById('question');
@@ -162,55 +179,74 @@ print(f"Hasil: {kali_dua(10)}")</code></pre>
             const resultEl = document.getElementById('quiz-result');
             const nextBtn = document.getElementById('next-btn');
 
-            resultEl.innerText = "";
+            hasAnswered = false;
+            resultEl.textContent = "";
+            resultEl.removeAttribute('class');
+            resultEl.removeAttribute('tabindex');
             nextBtn.style.display = "none";
             optionsEl.innerHTML = "";
 
             const currentQuestion = quizData[currentQuestionIndex];
-            questionEl.innerText = `${currentQuestionIndex + 1}. ${currentQuestion.question}`;
+            questionEl.textContent = `${currentQuestionIndex + 1}. ${currentQuestion.question}`;
 
             currentQuestion.options.forEach((option, index) => {
                 const button = document.createElement('button');
                 button.type = 'button';
-                button.innerText = option;
+                button.textContent = option;
+                button.dataset.option = option;
+                button.setAttribute('aria-describedby', 'quiz-result');
                 button.classList.add('option-btn');
-                button.onclick = () => checkAnswer(index);
+                button.addEventListener('click', () => checkAnswer(index));
                 optionsEl.appendChild(button);
             });
         }
 
         function checkAnswer(selectedIndex) {
+            if (hasAnswered) {
+                return;
+            }
+
+            hasAnswered = true;
             const correctIndex = quizData[currentQuestionIndex].correct;
             const options = document.querySelectorAll('.option-btn');
             const resultEl = document.getElementById('quiz-result');
             const nextBtn = document.getElementById('next-btn');
 
             options.forEach((btn, index) => {
-                btn.disabled = true;
+                btn.setAttribute('aria-disabled', 'true');
+                btn.tabIndex = -1;
                 if (index === correctIndex) {
                     btn.classList.add('correct');
+                    addAnswerStatus(btn, 'Benar');
+                    btn.setAttribute('aria-label', `${btn.dataset.option}, jawaban benar`);
                 } else if (index === selectedIndex) {
                     btn.classList.add('wrong');
+                    addAnswerStatus(btn, 'Pilihan Anda');
+                    btn.setAttribute('aria-label', `${btn.dataset.option}, pilihan Anda`);
                 }
             });
 
             if (selectedIndex === correctIndex) {
-                resultEl.innerText = "✅ Benar! Bagus sekali.";
-                resultEl.style.color = "green";
+                resultEl.textContent = "Benar. Bagus sekali.";
+                resultEl.className = "quiz-result--success";
             } else {
-                resultEl.innerText = "❌ Salah! Jawaban yang benar adalah: " + quizData[currentQuestionIndex].options[correctIndex];
-                resultEl.style.color = "red";
+                resultEl.textContent = "Salah. Jawaban yang benar adalah: " + quizData[currentQuestionIndex].options[correctIndex];
+                resultEl.className = "quiz-result--error";
             }
 
             currentQuestionIndex++;
             if (currentQuestionIndex < quizData.length) {
                 nextBtn.style.display = "block";
+                nextBtn.focus();
             } else {
-                resultEl.innerText += " | Kuis Selesai! 🎉";
+                resultEl.textContent += " Kuis selesai.";
+                resultEl.tabIndex = -1;
+                resultEl.focus();
             }
         }
 
-        window.onload = loadQuestion;
+        document.getElementById('next-btn').addEventListener('click', loadQuestion);
+        loadQuestion();
     </script>
 
     <footer>

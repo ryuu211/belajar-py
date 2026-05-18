@@ -5,7 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#071019">
     <meta name="description" content="Modul Python lanjutan untuk belajar web scraping, API, analisis data dengan NumPy dan Pandas, database SQLite, dan proyek praktis.">
-    <title>Modul Python Lanjutan: Scraping, Data & SQLite | PythonLearn</title>
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://ryuu211.github.io/belajar-py/pages/modules/lanjutan.html">
+    <title>Modul Python Lanjutan: Scraping, Data &amp; SQLite | PythonLearn</title>
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="PythonLearn">
+    <meta property="og:title" content="Modul Python Lanjutan: Scraping, Data &amp; SQLite | PythonLearn">
+    <meta property="og:description" content="Modul Python lanjutan untuk belajar web scraping, API, analisis data dengan NumPy dan Pandas, database SQLite, dan proyek praktis.">
+    <meta property="og:url" content="https://ryuu211.github.io/belajar-py/pages/modules/lanjutan.html">
+    <meta name="twitter:card" content="summary">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -13,7 +22,7 @@
 </head>
 <body>
     <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
-    <nav>
+    <nav aria-label="Navigasi utama">
         <a class="logo" href="../../index.html">PythonLearn</a>
         <ul>
             <li><a href="../../index.html">Home</a></li>
@@ -27,8 +36,8 @@
         <h1>Modul Python Lanjutan: Scraping, Data, dan SQLite</h1>
         <p>Terapkan Python untuk kebutuhan praktis seperti web scraping, integrasi API, analisis data dengan NumPy dan Pandas, database SQLite, dan otomatisasi sederhana.</p>
 
-        <div class="topic-section">
-            <h2>1. Web Scraping & API</h2>
+        <section class="topic-section">
+            <h2>1. Web Scraping &amp; API</h2>
             <p>Mengambil data secara otomatis dari website menggunakan library <code>requests</code> dan <code>BeautifulSoup</code>.</p>
             <pre class="code-block"><code>import requests
 from bs4 import BeautifulSoup
@@ -41,10 +50,10 @@ soup = BeautifulSoup(response.text, 'html.parser')
 for h1 in soup.find_all('h1'):
     print(h1.text)</code></pre>
             <div class="note">Kebutuhan: Install library dengan <code>pip install requests beautifulsoup4</code>.</div>
-        </div>
+        </section>
 
-        <div class="topic-section">
-            <h2>2. Analisis Data (NumPy & Pandas)</h2>
+        <section class="topic-section">
+            <h2>2. Analisis Data (NumPy &amp; Pandas)</h2>
             <p>Python adalah raja dalam data science. Gunakan Pandas untuk mengelola data tabel (DataFrame).</p>
             <pre class="code-block"><code>import pandas as pd
 import numpy as np
@@ -59,9 +68,9 @@ df = pd.DataFrame(data)
 # Menghitung rata-rata skor
 rata_rata = df['Skor'].mean()
 print(f"Rata-rata Skor: {rata_rata}")</code></pre>
-        </div>
+        </section>
 
-        <div class="topic-section">
+        <section class="topic-section">
             <h2>3. Database (SQLite)</h2>
             <p>Menyimpan data secara permanen menggunakan SQL database yang terintegrasi dengan Python.</p>
             <pre class="code-block"><code>import sqlite3
@@ -77,7 +86,7 @@ cursor.execute('CREATE TABLE IF NOT EXISTS user (nama TEXT, umur INTEGER)')
 cursor.execute('INSERT INTO user VALUES ("Dedi", 22)')
 conn.commit()
 conn.close()</code></pre>
-        </div>
+        </section>
     </main>
 
     <footer>

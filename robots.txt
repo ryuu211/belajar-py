@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ryuu211.github.io/belajar-py/sitemap.xml

@@ -1,0 +1,17 @@
+# PythonLearn
+
+> Panduan belajar Python berbahasa Indonesia untuk pemula, berisi roadmap, modul, tutorial, referensi, dan project praktis.
+
+## Halaman Utama
+
+- [Belajar Python dari Nol](https://ryuu211.github.io/belajar-py/): Ringkasan roadmap dan jalur belajar PythonLearn.
+- [Roadmap Belajar Python](https://ryuu211.github.io/belajar-py/pages/roadmap.html): Urutan belajar dari dasar sampai spesialisasi.
+- [Katalog Modul Python](https://ryuu211.github.io/belajar-py/pages/modules.html): Daftar modul tutorial, how-to, konsep, referensi, dan project.
+
+## Modul Penting
+
+- [Tutorial Python dari Nol](https://ryuu211.github.io/belajar-py/pages/modules/tutorial.html): Langkah awal menulis program Python dan mini project CLI.
+- [Modul Python Dasar](https://ryuu211.github.io/belajar-py/pages/modules/dasar.html): Variabel, tipe data, kontrol alur, koleksi, fungsi, dan kuis.
+- [Modul Python Menengah](https://ryuu211.github.io/belajar-py/pages/modules/menengah.html): OOP, file handling, error handling, comprehension, dan decorator.
+- [Modul Python Lanjutan](https://ryuu211.github.io/belajar-py/pages/modules/lanjutan.html): Web scraping, API, data analysis, SQLite, dan praktik lanjutan.
+- [10 Project Python Pemula](https://ryuu211.github.io/belajar-py/pages/modules/project.html): Latihan proyek dari kalkulator sampai database kontak.
